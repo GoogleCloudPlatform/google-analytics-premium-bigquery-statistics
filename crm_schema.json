@@ -1,0 +1,38 @@
+[
+	{
+		"name": "CRM_ID",
+		"type": "STRING"
+	},
+	{
+		"name": "hits_customDimensions_value",
+		"type": "STRING"
+	},
+	{
+		"name": "gender",
+		"type": "STRING"
+	},
+	{
+		"name": "birthday",
+		"type": "STRING"
+	},
+	{
+		"name": "state_code",
+		"type": "STRING"
+	},
+	{
+		"name": "annual_income_dollar",
+		"type": "STRING"
+	},
+	{
+		"name": "create_date",
+		"type": "STRING"
+	},
+	{
+		"name": "customer_level",
+		"type": "STRING"
+	},
+	{
+		"name": "CV_flag",
+		"type": "STRING"
+	}
+]
