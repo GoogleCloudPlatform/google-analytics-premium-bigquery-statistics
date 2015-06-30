@@ -17,18 +17,19 @@
 ##########################################
 
 # For visualization
-#install.packages("ggplot2")
+# install.packages("ggplot2", repos="http://cran.rstudio.com/")
 library(ggplot2)
 
 # Check the VIF, to find multicollinearity.
+# install.packages("car", repos="http://cran.rstudio.com/")
 library(car)
 
 # To Plot ROC curve 
-#install.packages("ROCR")
+# install.packages("ROCR", repos="http://cran.rstudio.com/")
 library(ROCR)
 
 # To check model 
-#install.packages("rms")
+# install.packages("rms", repos="http://cran.rstudio.com/")
 library(rms)
 
 ########################################
