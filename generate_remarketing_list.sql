@@ -60,15 +60,15 @@ FROM
   IF (SUM(hits.eventInfo.eventLabel='/2014/05/may-campaign.html') is null, 1, SUM(hits.eventInfo.eventLabel='/2014/05/may-campaign.html')) AS page201405,
   IF (SUM(hits.eventInfo.eventLabel='/2014/06/jun-campaign.html') is null, 1, SUM(hits.eventInfo.eventLabel='/2014/06/jun-campaign.html')) AS page201406
 
-  FROM (TABLE_DATE_RANGE([<INSERT PROJECT>:<INSERT DATASET>.ga_sessions_],
-                   TIMESTAMP('2014-07-16'),
-                   TIMESTAMP('2014-09-10')))
-
-  OMIT RECORD IF EVERY (hits.customDimensions.index != 6)
-  GROUP BY hits.customDimensions.index, hits.customDimensions.value, desktop_flag, tablet_flag, OS_Windows_flag, OS_Macintosh_flag
-)
-WHERE (
-  hits.customDimensions.index = 6 
+  FROM (TABLE_DATE_RANGE([<PROJECT:DATASET>.ga_sessions_],
+                   TIMESTAMP('<YYYY-MM-DD>'),
+                   TIMESTAMP('<YYYY-MM-DD>')))
+  WHERE (
+    hits.customDimensions.index = 6 
   AND
-  hits.customDimensions.value <> 'n/a')
+    hits.customDimensions.value <> 'n/a')
+  GROUP BY 
+    hits.customDimensions.index, hits.customDimensions.value, desktop_flag, tablet_flag, OS_Windows_flag, OS_Macintosh_flag
+  )
+  
 ORDER BY CV_probability DESC

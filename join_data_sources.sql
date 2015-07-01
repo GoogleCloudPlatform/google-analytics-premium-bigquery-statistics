@@ -75,11 +75,13 @@ FROM
     SUM(hits.eventInfo.eventLabel='/2014/06/jun-campaign.html') AS page201406
 
   FROM
-    TABLE_DATE_RANGE([<PROJECT-NAME>:<DATASET>.ga_sessions_],
-    TIMESTAMP(‘<YYYY-MM-DD>'),
+    TABLE_DATE_RANGE([<PROJECT:DATASET>.ga_sessions_],
+    TIMESTAMP('<YYYY-MM-DD>'),
     TIMESTAMP('<YYYY-MM-DD>'))
-
-  OMIT RECORD IF EVERY (hits.customDimensions.index != 6)
+  WHERE (
+    hits.customDimensions.index = 6
+  AND
+    hits.customDimensions.value <> 'n/a')
   GROUP BY
     fullVisitorId,
     hits.customDimensions.value,
@@ -93,11 +95,6 @@ FROM
     OS_Macintosh_flag
   ) a
 JOIN
-  [<PROJECT-NAME>:<DATASET>.<TABLE>] b
+  [<PROJECT:DATASET.TABLE>] b
 ON
   a.hits.customDimensions.value = b.hits_customDimensions_value
-WHERE (
-    a.hits.customDimensions.index = 6
-AND
-    a.hits.customDimensions.value <> 'n/a')
-
