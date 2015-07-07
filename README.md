@@ -470,6 +470,24 @@ data chosen by you to be added to its log entries, and call these [*custom dimen
 case. If you are using multiple dimensions in your Google Analytics already,
 you may choose another index, for example `dimension7` instead.
 
+Since you are using hit level custom dimensions you also need a way of injecting the `clientId` into every page view on your website. Otherwise, Google Analytics Premium will not store this value for each hit. A sample script is provided below, but you should adapt this to fit your site, if necessary. See the [developer guide](https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets) for examples of different approaches you can take. This example [Google Analytics snippet](https://developers.google.com/analytics/devguides/collection/analyticsjs/) sets the `clientId` for every page view in the custom dimension `dimension6`:
+
+```
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga(function(tracker) {
+    var clientId = tracker.get('clientId');
+    ga('set', 'dimension6', clientId);
+  });
+  ga('send', 'pageview');
+</script>
+```
+
 Congratulations! You've successfully linked your CRM database with Google
 Analytics, so what's next? As it turns out, linking your different data sources
 opens up a number of exciting opportunities for generating more insight into
