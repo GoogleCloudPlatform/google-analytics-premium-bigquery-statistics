@@ -746,7 +746,9 @@ completed the following:
   * [Link your AdWords account](https://support.google.com/analytics/answer/1033961?hl=en) with the Google Analytics Premium account that you will import the remarketing
 list into
   * [Enable remarketing](https://support.google.com/analytics/answer/2444872?hl=en) in your Google Analytics Premium account
-  * [Create a custom metric](https://support.google.com/analytics/answer/2709829?hl=en) to store the conversion probability
+  * Create a [custom dimension and (optionally) a custom metric](https://support.google.com/analytics/answer/2709829?hl=en) to store the conversion probability
+
+If you are including the Client ID with every hit, you may wish to not create a custom metric for the conversion probability and use only a custom dimension since the value can become very large. If you approach it from a session or user level then the metric can be very useful. It all comes down to the specific approach that's right for your scenario.
 
 ### Create a New Google Analytics Data Set
 
@@ -768,7 +770,7 @@ have to select at least one view or else the data set will be inactive.
 the "Conversion Probability" Custom Metric. Click "Save" and move to the next
 step.
   5. Select "Yes" when asked about "Overwrite hit data" and define the header line
-in the CSV file as shown in the screenshot below. Note the link to Custom Dimension 6 
+in the CSV file as shown in the screenshot below. Note the link to Custom Dimension 6, Custom Dimension 9 
 and Custom Metric 1 as defined above.
 
 ![CSV Header](images/import-csv-header.png)
