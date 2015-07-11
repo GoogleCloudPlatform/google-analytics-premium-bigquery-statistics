@@ -694,7 +694,7 @@ Below, you can see the top part of a BigQuery SQL statement
 using sample data. The coefficients are multiplied with the respective variable
 and multiplied by 100 to create a score between 0 to 100 for each user. The
 results are sorted in descending order of probability. You can find the
-complete SQL query template in the file [`generate_remarketing_list.sql`](https://drive.google.com/corp/drive/folders/0B0Kq6znbIur9OHA4WFAxcXhtbmc).
+complete SQL query template in the file `generate_remarketing_list.sql`.
 
 ```
 SELECT
