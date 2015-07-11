@@ -6,6 +6,8 @@ Premium logs. It consists of an initial code lab using pre-generated sample
 data, followed by a detailed implementation guide that shows you how to put
 predictive analytics into practice using your own data.
 
+The material in this repository complements [an article](https://cloud.google.com/solutions/google-analytics-bigquery) introducing the topic on the Google Cloud Platform Solutions website. 
+
 ![Two step tutorial](images/code-lab-2-chevron.png)
 
 You will start by diving into the deep-end and use the 
