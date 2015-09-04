@@ -806,8 +806,8 @@ listed.
 
 ![Audience builder](images/audience-builder.png)
 
-As you experiment, be sure to read the [usage guidelines](https://support.google.com/analytics/answer/2795983?hl=en) with regards to what data you can send to Google Analytics and particular the
-restriction on sending any personally identifiable information (PII).
+As you experiment, be sure to read the [usage guidelines](https://support.google.com/analytics/answer/2795983?hl=en) with regards to what data you can send to Google Analytics and in particular the
+restriction on sending any personally identifiable information (PII), and your Google Analytics Premium agreement, including the [Advertising Features policy](https://support.google.com/analytics/answer/2700409?vid=1-635766380079250047-476492744).
 
 Hopefully, this tutorial has shown you how to get started and gather more
 insight into your data based on the Google Analytics Premium + BigQuery
