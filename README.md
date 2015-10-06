@@ -301,6 +301,7 @@ curve by running the R commands below.
 ```
 > pred <- prediction(prob, data1_2$b_CV_flag)
 > perf <- performance(pred, measure = "tpr", x.measure = "fpr")
+> pdf('Rplots.pdf')
 > qplot(x = perf@x.values[[1]], y = perf@y.values[[1]], xlab = perf@x.name, ylab = perf@y.name, main="ROC curve")
 > dev.off()
 ```

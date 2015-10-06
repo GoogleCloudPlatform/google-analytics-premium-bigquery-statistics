@@ -36,7 +36,7 @@ library(rms)
 # Process the Data
 ########################################
 
-data1 <- read.csv("./sample_data/train_data_scrubbed.csv")
+data1 <- read.csv("./sample_data/train_data.csv")
 names(data1)
 
 # Delete unnecessary columns
@@ -103,6 +103,7 @@ pred <- prediction(prob, data1_2$b_CV_flag)
 perf <- performance(pred, measure = "tpr", x.measure = "fpr")
 
 # Plot and save as Rplots.pdf in local file
+pdf('Rplots.pdf')
 qplot(x = perf@x.values[[1]], y = perf@y.values[[1]], xlab = perf@x.name, ylab = perf@y.name, main="ROC curve")
 dev.off() 
 
